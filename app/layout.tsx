@@ -8,6 +8,7 @@ import HeaderNavbar from "@/components/layout/HeaderNavbar";
 import { StyleT } from "types/shared.type";
 import { FC, PropsWithChildren } from "react";
 import "validation/yupConfig";
+import Title from "@/components/shared/Title";
 
 export const metadata: Metadata = {
   title: "سوال ها",
@@ -28,9 +29,7 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
         <ThemeRegistry>
           <AppBar position="static">
             <Container sx={containerStyle}>
-              <Typography variant="h1">
-                {SHARED_STRINGS.QUESTION_LIST}
-              </Typography>
+              <Title />
               <HeaderNavbar />
             </Container>
           </AppBar>
