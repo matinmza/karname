@@ -17,7 +17,6 @@ interface PropI {
   onClose: () => any;
   open: boolean;
   title?: string;
-  showCloseIcon?: boolean;
 }
 
 const style: SxProps<Theme> = {
@@ -25,7 +24,8 @@ const style: SxProps<Theme> = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 700,
+  width: "100%",
+  maxWidth: 700,
   bgcolor: "#FFFFFF",
   borderRadius: "8px",
   boxShadow:
@@ -79,7 +79,5 @@ const CustomModal: FC<PropsWithChildren<PropI>> = (props) => {
     </Modal>
   );
 };
-CustomModal.defaultProps = {
-  showCloseIcon: true,
-};
+
 export default CustomModal;
