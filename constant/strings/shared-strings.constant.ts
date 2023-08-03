@@ -14,6 +14,7 @@ const SHARED_STRINGS: Record<string, string> = {
   SUBMIT_YOUR_ANSWER: "پاسخ خود را ثبت کنید ",
   ANSWER_WAS_NOT_GOOD: "پاسخ خوب نبود",
   ANSWER_WAS_GOOD: "پاسخ خوب بود",
+  SEND_RESPONSE: "ارسال پاسخ",
 };
 
 export default SHARED_STRINGS;

@@ -15,4 +15,5 @@ export interface FormikFieldI {
 export enum FormFieldsE {
   subject = "subject",
   questionText = "questionText",
+  answerText = "answerText",
 }

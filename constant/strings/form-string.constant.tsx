@@ -10,6 +10,11 @@ const FORM_STRINGS: Record<FormFieldsE | string, FormStringsI> = {
     placeholder: "مشکل در اجرای کد",
     validationName: "سوال",
   },
+  [FormFieldsE.answerText]: {
+    label: " پاسخ خود را بنویسید",
+    placeholder: " متن پاسخ ...",
+    validationName: "پاسخ",
+  },
 };
 
 export default FORM_STRINGS;
