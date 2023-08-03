@@ -17,6 +17,7 @@ const palette = {
     dark: "#777777",
     darker: "#454545",
     lightest: "#F9F9F9",
+    light: "#EEEEEE",
   },
   annotations: {
     error: "#F16063",

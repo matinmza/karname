@@ -4,9 +4,10 @@ import ThemeRegistry from "./ThemeRegistry";
 import { yekan } from "./font";
 import { AppBar, Container, Typography, styled } from "@mui/material";
 import SHARED_STRINGS from "constant/strings/shared-strings.constant";
-import HeaderNavbar from "components/shared/HeaderNavbar";
+import HeaderNavbar from "@/components/layout/HeaderNavbar";
 import { StyleT } from "types/shared.type";
 import { FC, PropsWithChildren } from "react";
+import "validation/yupConfig";
 
 export const metadata: Metadata = {
   title: "سوال ها",

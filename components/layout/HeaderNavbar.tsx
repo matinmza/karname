@@ -5,7 +5,8 @@ import SHARED_STRINGS from "constant/strings/shared-strings.constant";
 import { Avatar, Box, Button, Tooltip, Typography, Modal } from "@mui/material";
 import IconArrowDown from "components/icons/IconArrowDown";
 import IconPlus from "components/icons/IconPlus";
-import CustomModal from "./CustomModal";
+import CustomModal from "components/shared/CustomModal";
+import FormNewQuestion from "components/forms/FormNewQuestion";
 const ProfileMenu: FC = () => {
   return (
     <Tooltip title={SHARED_STRINGS.PROFILE}>
@@ -42,7 +43,9 @@ const HeaderNavbar: FC = () => {
         open={newQuestionModal}
         title={SHARED_STRINGS.CREATE_NEW_QUESTION}
       >
-        test
+        <>
+          <FormNewQuestion onCancel={handleCloseModalNewQuestion} />
+        </>
       </CustomModal>
     </Box>
   );
