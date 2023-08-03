@@ -1,10 +1,6 @@
 import { Components } from "@mui/material/styles";
 import theme from "..";
-// root: ({ theme }) => theme.unstable_sx({
-//   width: "100%",
-//   maxWidth: 1254,
-//   padding:
-// })
+
 const MuiButton: Components<typeof theme>["MuiButton"] = {
   styleOverrides: {
     contained: ({ theme }) =>
