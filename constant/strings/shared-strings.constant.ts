@@ -7,6 +7,13 @@ const SHARED_STRINGS: Record<string, string> = {
   STATIC_PROFILE_NAME: "الناز شاکر دوست",
   CLOSE: "بستن",
   CANCEL: "انصراف",
+  HOUR: "ساعت",
+  DATE: "تاریخ",
+  SEE_DETAILS: "مشاهده جزئیات",
+  ANSWERS: "پاسخ ها",
+  SUBMIT_YOUR_ANSWER: "پاسخ خود را ثبت کنید ",
+  ANSWER_WAS_NOT_GOOD: "پاسخ خوب نبود",
+  ANSWER_WAS_GOOD: "پاسخ خوب بود",
 };
 
 export default SHARED_STRINGS;
