@@ -1,5 +1,6 @@
 import CardAnswer from "@/components/cards/CardAnswer";
 import CardQuestion from "@/components/cards/CardQuestion";
+import FormAnswerQuestion from "@/components/forms/FormAwnserQuestion";
 import SHARED_STRINGS from "@/constant/strings/shared-strings.constant";
 import { NextPageWithParam } from "@/types/shared.type";
 import { Container, Stack, Typography } from "@mui/material";
@@ -34,6 +35,7 @@ const QuestionSinglePage: NextPageWithParam<"id"> = (props) => {
       <Typography variant="h2" mt="24px" mb="18px">
         {SHARED_STRINGS.SUBMIT_YOUR_ANSWER}
       </Typography>
+      <FormAnswerQuestion />
     </Container>
   );
 };
