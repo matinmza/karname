@@ -8,17 +8,17 @@ import { questionI } from "@/types/question.type";
 const RootStyle = {
   boxShadow:
     " 0px 0px 1px 0px rgba(12, 26, 75, 0.24), 0px 3px 8px -1px rgba(50, 50, 71, 0.05)",
-  borderRadius: "8px",
+  borderRadius: "0.5rem",
   backgroundColor: "gray.lightest",
   width: "100%",
 };
 const headerStyle = {
   backgroundColor: "#fff",
-  borderRadius: "8px",
+  borderRadius: "0.5rem",
   boxShadow:
     " 0px 0px 1px 0px rgba(12, 26, 75, 0.24), 0px 3px 8px -1px rgba(50, 50, 71, 0.05)",
-  paddingX: "16px",
-  paddingY: "8px",
+  paddingX: "1rem",
+  paddingY: "0.5rem",
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
@@ -31,11 +31,17 @@ const CardQuestion: FC<
     <Box sx={RootStyle}>
       <Box sx={headerStyle}>
         <Stack flexDirection="row" alignItems="center" gap={1}>
-          {showAvatar ? <Avatar variant="rounded" src={props.avatar} /> : null}
+          {showAvatar ? (
+            <Avatar
+              sx={{ width: "2rem", height: "2rem" }}
+              variant="rounded"
+              src={props.avatar}
+            />
+          ) : null}
 
           <Typography variant="h3">{props.subject}</Typography>
         </Stack>
-        <Box display="flex" alignItems="center" gap="28px">
+        <Box display="flex" alignItems="center" gap="1.75rem">
           <ShowTime time={props.createOn} />
           <Box display="flex" alignItems="center" gap={1}>
             <IconComment />
@@ -45,7 +51,7 @@ const CardQuestion: FC<
           </Box>
         </Box>
       </Box>
-      <Box padding="16px">
+      <Box padding="1rem">
         <Typography variant="body1">{props.questionText}</Typography>
         {showDetailButton && (
           <Box display="flex" justifyContent="flex-end">

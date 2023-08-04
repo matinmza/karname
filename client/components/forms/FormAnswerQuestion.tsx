@@ -39,13 +39,13 @@ const FormAnswerQuestion: FC<{ questionId: number }> = ({ questionId }) => {
       onSubmit={handleSubmit}
     >
       {(formik) => (
-        <Stack gap="24px" component="form" onSubmit={formik.handleSubmit}>
+        <Stack gap="1.5rem" component="form" onSubmit={formik.handleSubmit}>
           <FormikInput name={FormFieldsE.answerText} multiline rows={6} />
-          <Box mt="10px">
+          <Box mt="0.625rem">
             <Button
               disabled={createAnswerMutation.isLoading}
               type="submit"
-              sx={{ width: 200 }}
+              sx={{ width: "12.5rem" }}
             >
               {SHARED_STRINGS.SEND_RESPONSE}
             </Button>

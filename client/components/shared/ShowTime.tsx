@@ -21,7 +21,7 @@ const ShowTime: FC<{ time: string }> = ({ time }) => {
       </Typography>
 
       <Typography variant="h4">{values.hour}</Typography>
-      <Box mx="12px" sx={{ display: "flex", alignItems: "center" }}>
+      <Box mx="0.75rem" sx={{ display: "flex", alignItems: "center" }}>
         <IconLine />
       </Box>
       <Typography variant="body2" color="gray.dark">

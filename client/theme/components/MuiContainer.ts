@@ -8,8 +8,8 @@ const MuiContainer: Components<typeof theme>["MuiContainer"] = {
         width: "100%",
         maxWidth: 1366,
         px: {
-          xs: "10px",
-          lg: "56px",
+          xs: "0.625rem",
+          lg: "3.5rem",
         },
       }),
   },

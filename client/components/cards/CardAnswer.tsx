@@ -12,17 +12,17 @@ import { Stack } from "@mui/system";
 const RootStyle = {
   boxShadow:
     " 0px 0px 1px 0px rgba(12, 26, 75, 0.24), 0px 3px 8px -1px rgba(50, 50, 71, 0.05)",
-  borderRadius: "8px",
+  borderRadius: "0.5rem",
   backgroundColor: "gray.lightest",
   width: "100%",
 };
 const headerStyle = {
   backgroundColor: "#fff",
-  borderRadius: "8px",
+  borderRadius: "0.5rem",
   boxShadow:
     " 0px 0px 1px 0px rgba(12, 26, 75, 0.24), 0px 3px 8px -1px rgba(50, 50, 71, 0.05)",
-  paddingX: "16px",
-  paddingY: "8px",
+  paddingX: "1rem",
+  paddingY: "0.5rem",
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
@@ -30,7 +30,8 @@ const headerStyle = {
 
 const errorButtonStyle = {
   color: "annotations.error",
-  gap: "8px",
+  gap: "0.5rem",
+  paddingX: "9px",
   "&:hover": {
     color: "red",
     borderColor: "red",
@@ -67,27 +68,32 @@ const CardAnswer: FC<answerI> = (props) => {
           <Avatar variant="rounded" src={props.avatar} />
           <Typography variant="h3">{props.fullName}</Typography>
         </Stack>
-        <Box display="flex" alignItems="center" gap="28px">
+        <Box display="flex" alignItems="center" gap="1.75rem">
           <ShowTime time={props.createOn} />
           <StatusAnswer sadLength={props.isBad} happyLength={props.isGood} />
         </Box>
       </Box>
-      <Box padding="16px">
+      <Box padding="1rem">
         <Typography variant="body1">{props.text}</Typography>
         <Box display="flex" justifyContent="flex-end" gap={1}>
           <Button
             variant="outlined"
             sx={{
               color: "annotations.success",
-              gap: "8px",
+              gap: "0.5rem",
+              paddingX: "11.5px",
             }}
           >
-            <IconHappy sx={{ fill: "#66CB9F" }} />
+            <IconHappy
+              sx={{ fill: "#66CB9F", width: "1rem", height: "1rem" }}
+            />
 
             {SHARED_STRINGS.ANSWER_WAS_GOOD}
           </Button>
           <Button variant="outlined" sx={errorButtonStyle}>
-            <IconHappy sx={{ fill: "#F16063" }} />
+            <IconHappy
+              sx={{ fill: "#F16063", width: "1rem", height: "1rem" }}
+            />
 
             {SHARED_STRINGS.ANSWER_WAS_NOT_GOOD}
           </Button>

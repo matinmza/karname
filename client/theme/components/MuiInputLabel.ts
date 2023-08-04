@@ -5,7 +5,7 @@ const MuiInputLabel: Components<typeof theme>["MuiInputLabel"] = {
   styleOverrides: {
     root: ({ theme }) =>
       theme.unstable_sx({
-        borderRadius: "6px",
+        borderRadius: "3.75rem",
         fontWeight: 700,
         fontSize: "0.75rem",
         color: "gray.darker",

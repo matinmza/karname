@@ -11,12 +11,15 @@ const ProfileMenu: FC = () => {
   return (
     <Tooltip title={SHARED_STRINGS.PROFILE}>
       <Button variant="text">
-        <Avatar sx={{ width: "42px", height: "42px" }} src="/img/avatar.svg" />
+        <Avatar
+          sx={{ width: "2.75rem", height: "2.75rem" }}
+          src="/img/avatar.svg"
+        />
         <Typography
           variant="h4"
           sx={{
-            paddingRight: "16px",
-            paddingLeft: "12px",
+            paddingRight: "1rem",
+            paddingLeft: "0.75rem",
             color: "gray.darker",
           }}
         >
@@ -38,7 +41,7 @@ const HeaderNavbar: FC = () => {
   return (
     <Box display="flex" alignItems="center" gap="2rem">
       <Button
-        sx={{ px: "21px", gap: "8px" }}
+        sx={{ px: "1.3125rem", gap: "0.5rem" }}
         onClick={handleOpenModalNewQuestion}
       >
         <IconPlus />
