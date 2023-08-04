@@ -10,11 +10,29 @@ import FormNewQuestion from "components/forms/FormNewQuestion";
 const ProfileMenu: FC = () => {
   return (
     <Tooltip title={SHARED_STRINGS.PROFILE}>
-      <Button variant="text">
-        <Avatar sx={{ width: "42px", height: "42px" }} src="/img/avatar.svg" />
+      <Button variant="text" sx={{ height: "100%" }}>
+        <Avatar
+          src="/img/avatar.svg"
+          sx={{
+            width: "2.75rem",
+            height: "2.75rem",
+            display: {
+              xs: "none",
+              sm: "block",
+            },
+          }}
+        />
         <Typography
-          variant="h5"
-          sx={{ paddingRight: "16px", paddingLeft: "12px" }}
+          variant="h4"
+          sx={{
+            paddingRight: "1rem",
+            paddingLeft: "0.75rem",
+            color: "gray.darker",
+            display: {
+              xs: "none",
+              sm: "block",
+            },
+          }}
         >
           {SHARED_STRINGS.STATIC_PROFILE_NAME}
         </Typography>
@@ -32,8 +50,11 @@ const HeaderNavbar: FC = () => {
     setNewQuestionModal(false);
   };
   return (
-    <Box sx={{ display: "flex", alignItems: "center", gap: "2rem" }}>
-      <Button sx={{ px: "14px" }} onClick={handleOpenModalNewQuestion}>
+    <Box display="flex" alignItems="center" gap="2rem">
+      <Button
+        sx={{ px: "1.3125rem", gap: "0.5rem" }}
+        onClick={handleOpenModalNewQuestion}
+      >
         <IconPlus />
         {SHARED_STRINGS.NEW_QUESTION}
       </Button>

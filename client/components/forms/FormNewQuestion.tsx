@@ -33,48 +33,46 @@ const FormNewQuestion: FC<{ onClose: () => any }> = (props) => {
   };
 
   return (
-    <Box>
-      <Formik
-        initialValues={{
-          [FormFieldsE.subject]: "",
-          [FormFieldsE.questionText]: "",
-        }}
-        validateOnBlur
-        validationSchema={validationSchema}
-        onSubmit={handleSubmit}
-      >
-        {(formik) => (
-          <Stack gap="14px" component="form" onSubmit={formik.handleSubmit}>
-            <FormikInput name={FormFieldsE.subject} />
-            <FormikInput name={FormFieldsE.questionText} multiline rows={7.5} />
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "flex-end",
-                gap: "16px",
-                mt: "10px",
-              }}
+    <Formik
+      initialValues={{
+        [FormFieldsE.subject]: "",
+        [FormFieldsE.questionText]: "",
+      }}
+      validateOnBlur
+      validationSchema={validationSchema}
+      onSubmit={handleSubmit}
+    >
+      {(formik) => (
+        <Stack gap="0.875rem" component="form" onSubmit={formik.handleSubmit}>
+          <FormikInput name={FormFieldsE.subject} />
+          <FormikInput name={FormFieldsE.questionText} multiline rows={7.5} />
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "flex-end",
+              gap: "1rem",
+              mt: "0.625rem",
+            }}
+          >
+            <Button
+              variant="text"
+              sx={{ px: "1.9375rem" }}
+              onClick={props.onClose}
+              disabled={createQuestionMutation.isLoading}
             >
-              <Button
-                variant="text"
-                sx={{ px: "25px" }}
-                onClick={props.onClose}
-                disabled={createQuestionMutation.isLoading}
-              >
-                {SHARED_STRINGS.CANCEL}
-              </Button>
-              <Button
-                disabled={createQuestionMutation.isLoading}
-                type="submit"
-                sx={{ px: "14px" }}
-              >
-                {SHARED_STRINGS.CREATE_QUESTION}
-              </Button>
-            </Box>
-          </Stack>
-        )}
-      </Formik>
-    </Box>
+              {SHARED_STRINGS.CANCEL}
+            </Button>
+            <Button
+              disabled={createQuestionMutation.isLoading}
+              type="submit"
+              sx={{ px: "1.25rem" }}
+            >
+              {SHARED_STRINGS.CREATE_QUESTION}
+            </Button>
+          </Box>
+        </Stack>
+      )}
+    </Formik>
   );
 };
 

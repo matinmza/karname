@@ -7,6 +7,7 @@ const MuiButton: Components<typeof theme>["MuiButton"] = {
       theme.unstable_sx({
         backgroundColor: "primary.main",
         color: "#FFFFFF",
+        boxShadow: 0,
         "&:hover": {
           backgroundColor: "#16AE56",
         },
@@ -29,14 +30,15 @@ const MuiButton: Components<typeof theme>["MuiButton"] = {
       fontSize: "0.6rem",
       lineHeight: "1rem",
       fontWeight: 700,
-      padding: "5px",
-      borderRadius: "6px",
+      paddingX: "0.4375rem",
+      height: "2.25rem",
     },
     sizeMedium: {
       fontSize: "0.8rem",
       lineHeight: "1.25rem",
       fontWeight: 700,
-      padding: "7px",
+
+      height: "2.25rem",
     },
   },
   defaultProps: {
