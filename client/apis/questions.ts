@@ -9,9 +9,9 @@ export const createQuestion = (dto: {
 }) => {
   const createOn = new Date().toISOString();
   const avatar = "/img/avatar2.svg";
-
+  const answerLength = 0;
   return axios
-    .post(BASE_URL + "/questions", { createOn, avatar, ...dto })
+    .post(BASE_URL + "/questions", { createOn, avatar, answerLength, ...dto })
     .then((res) => res.data);
 };
 
