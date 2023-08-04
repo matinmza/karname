@@ -10,10 +10,17 @@ import FormNewQuestion from "components/forms/FormNewQuestion";
 const ProfileMenu: FC = () => {
   return (
     <Tooltip title={SHARED_STRINGS.PROFILE}>
-      <Button variant="text">
+      <Button variant="text" sx={{ height: "100%" }}>
         <Avatar
-          sx={{ width: "2.75rem", height: "2.75rem" }}
           src="/img/avatar.svg"
+          sx={{
+            width: "2.75rem",
+            height: "2.75rem",
+            display: {
+              xs: "none",
+              sm: "block",
+            },
+          }}
         />
         <Typography
           variant="h4"
@@ -21,6 +28,10 @@ const ProfileMenu: FC = () => {
             paddingRight: "1rem",
             paddingLeft: "0.75rem",
             color: "gray.darker",
+            display: {
+              xs: "none",
+              sm: "block",
+            },
           }}
         >
           {SHARED_STRINGS.STATIC_PROFILE_NAME}

@@ -69,7 +69,9 @@ const CardAnswer: FC<answerI> = (props) => {
           <Typography variant="h3">{props.fullName}</Typography>
         </Stack>
         <Box display="flex" alignItems="center" gap="1.75rem">
-          <ShowTime time={props.createOn} />
+          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+            <ShowTime time={props.createOn} />
+          </Box>
           <StatusAnswer sadLength={props.isBad} happyLength={props.isGood} />
         </Box>
       </Box>

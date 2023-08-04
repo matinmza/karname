@@ -42,7 +42,9 @@ const CardQuestion: FC<
           <Typography variant="h3">{props.subject}</Typography>
         </Stack>
         <Box display="flex" alignItems="center" gap="1.75rem">
-          <ShowTime time={props.createOn} />
+          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+            <ShowTime time={props.createOn} />
+          </Box>
           <Box display="flex" alignItems="center" gap={1}>
             <IconComment />
             <Typography color="gray.dark" variant="h4">

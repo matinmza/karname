@@ -17,7 +17,7 @@ const rootStyle: StyleT = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: "100%",
+  width: "90%",
   maxWidth: 700,
   bgcolor: "#FFFFFF",
   borderRadius: "0.5rem",
@@ -31,10 +31,10 @@ const headerModalStyle: StyleT = {
   justifyContent: "space-between",
   paddingLeft: "1.5rem",
   paddingRight: "1rem",
-  paddingY: "0.75rem",
   borderTopLeftRadius: "0.5rem",
   borderTopRightRadius: "0.5rem",
   bgcolor: "naturals.white",
+  height: "3rem",
   boxShadow:
     "0px 0px 1px 0px rgba(12, 26, 75, 0.24), 0px 3px 8px -1px rgba(50, 50, 71, 0.05)",
 };

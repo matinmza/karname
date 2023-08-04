@@ -3,11 +3,15 @@ import theme from "..";
 
 const MuiTypography: Components<typeof theme>["MuiTypography"] = {
   styleOverrides: {
-    h1: {
-      fontWeight: 800,
-      fontSize: "1.5rem",
-      lineHeight: "2.25rem",
-    },
+    h1: ({ theme }) =>
+      theme.unstable_sx({
+        fontWeight: 800,
+        lineHeight: "2.25rem",
+        fontSize: {
+          xs: "1rem",
+          sm: "1.5rem",
+        },
+      }),
 
     h2: {
       fontWeight: 800,
