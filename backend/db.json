@@ -5,9 +5,11 @@
       "subject": "موضوع درخواست سوال",
       "questionText": "متن سوال",
       "createOn": "2023-08-03T14:11:14.966Z",
-      "id": 0
+      "id": 0,
+      "answerLength": 2
     },
     {
+      "answerLength": 1,
       "avatar": "/img/avatar2.svg",
       "subject": "موضوع درخواست سوال ۲",
       "questionText": " متن سوال تستی",
@@ -15,6 +17,7 @@
       "id": 1
     },
     {
+      "answerLength": 7,
       "avatar": "/img/avatar2.svg",
       "createOn": "2023-08-03T21:51:16.337Z",
       "questionText": "حل مشکل در اتنتیکیشن",
@@ -22,6 +25,7 @@
       "id": 2
     },
     {
+      "answerLength": 4,
       "avatar": "/img/avatar2.svg",
       "createOn": "2023-08-04T08:47:14.480Z",
       "questionText": "مشکل جدید",
@@ -141,24 +145,34 @@
       "id": 11
     },
     {
-      "createOn": "2023-08-04T12:58:39.688Z",
-      "avatar": "/img/avatar.svg",
+      "createOn": "2023-08-04T15:24:12.534Z",
+      "avatar": "/img/avatar2.svg",
       "fullName": "الناز شاکر دوست",
-      "text": "1234",
-      "isBad": 63,
-      "isGood": 6,
-      "questionId": 0,
+      "text": "test jadid",
+      "isBad": 30,
+      "isGood": 77,
+      "questionId": 3,
       "id": 12
     },
     {
-      "createOn": "2023-08-04T12:59:10.161Z",
+      "createOn": "2023-08-04T15:24:48.849Z",
       "avatar": "/img/avatar2.svg",
       "fullName": "الناز شاکر دوست",
-      "text": "324",
-      "isBad": 5,
-      "isGood": 61,
-      "questionId": 0,
+      "text": "123d",
+      "isBad": 47,
+      "isGood": 89,
+      "questionId": 3,
       "id": 13
+    },
+    {
+      "createOn": "2023-08-04T15:27:01.911Z",
+      "avatar": "/img/avatar2.svg",
+      "fullName": "الناز شاکر دوست",
+      "text": "qwsfvew",
+      "isBad": 0,
+      "isGood": 51,
+      "questionId": 3,
+      "id": 14
     }
   ]
 }

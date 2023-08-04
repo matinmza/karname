@@ -48,7 +48,7 @@ const CardQuestion: FC<
           <Box display="flex" alignItems="center" gap={1}>
             <IconComment />
             <Typography color="gray.dark" variant="h4">
-              20
+              {props.answerLength}
             </Typography>
           </Box>
         </Box>

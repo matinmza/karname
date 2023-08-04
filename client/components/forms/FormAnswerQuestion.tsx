@@ -11,16 +11,28 @@ import { Box, Button, Stack } from "@mui/material";
 import SHARED_STRINGS from "@/constant/strings/shared-strings.constant";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { createAnswer } from "@/apis/answers";
+import { questionI } from "@/types/question.type";
+import { addAnswerLength } from "@/apis/questions";
 const validationSchema = yup.object().shape({
   [FormFieldsE.answerText]: yup.string().required(),
 });
-const FormAnswerQuestion: FC<{ questionId: number }> = ({ questionId }) => {
+const FormAnswerQuestion: FC<{ question: questionI }> = ({ question }) => {
+  const questionId = question.id;
   const queryClient = useQueryClient();
+  const changeQuestionMutation = useMutation({
+    mutationFn: () => addAnswerLength(question),
+    onSuccess: (data) => {
+      queryClient.setQueryData(["questions", data.id], data);
+      queryClient.invalidateQueries(["questions"], { exact: true });
+      queryClient.invalidateQueries(["questions", data.id], { exact: true });
+    },
+  });
   const createAnswerMutation = useMutation({
     mutationFn: (val: string) => createAnswer(val, questionId),
     onSuccess: (data) => {
       queryClient.setQueryData(["answers", data.id], data);
       queryClient.invalidateQueries(["answers", questionId], { exact: true });
+      changeQuestionMutation.mutate();
     },
   });
 

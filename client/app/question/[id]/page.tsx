@@ -21,11 +21,8 @@ import React from "react";
 
 const QuestionSinglePage: NextPageWithParam<"id"> = (props) => {
   const questionQuery = useQuery<questionI>({
-    queryKey: ["posts", props.params.id],
+    queryKey: ["questions", props.params.id],
     queryFn: () => getQuestion(props.params.id),
-
-    onError: () => {},
-    retry: 1,
   });
   const answersQuery = useQuery<answerI[]>({
     queryKey: ["answers", questionQuery?.data?.id],
@@ -76,7 +73,7 @@ const QuestionSinglePage: NextPageWithParam<"id"> = (props) => {
           {SHARED_STRINGS.SUBMIT_YOUR_ANSWER}
         </Typography>
         {typeof questionQuery?.data?.id !== "undefined" ? (
-          <FormAnswerQuestion questionId={questionQuery.data.id} />
+          <FormAnswerQuestion question={questionQuery.data} />
         ) : null}
       </Container>
     </main>
