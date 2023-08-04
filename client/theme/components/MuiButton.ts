@@ -7,6 +7,7 @@ const MuiButton: Components<typeof theme>["MuiButton"] = {
       theme.unstable_sx({
         backgroundColor: "primary.main",
         color: "#FFFFFF",
+        boxShadow: 0,
         "&:hover": {
           backgroundColor: "#16AE56",
         },

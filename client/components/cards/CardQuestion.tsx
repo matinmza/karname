@@ -59,6 +59,7 @@ const CardQuestion: FC<
               LinkComponent={Link}
               href={"question/" + props.id}
               variant="outlined"
+              sx={{ padding: "8px" }}
             >
               {SHARED_STRINGS.SEE_DETAILS}
             </Button>
