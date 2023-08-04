@@ -9,6 +9,7 @@ import { StyleT } from "types/shared.type";
 import { FC, PropsWithChildren } from "react";
 import "validation/yupConfig";
 import Title from "@/components/shared/Title";
+import ReactQueryProvider from "./ReactQueryProvider";
 
 export const metadata: Metadata = {
   title: "سوال ها",
@@ -26,16 +27,17 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <html dir="rtl" lang="fa-IR">
       <body className={yekan.className}>
-        <ThemeRegistry>
-          <AppBar position="static">
-            <Container sx={containerStyle}>
-              <Title />
-              <HeaderNavbar />
-            </Container>
-          </AppBar>
-
-          {children}
-        </ThemeRegistry>
+        <ReactQueryProvider>
+          <ThemeRegistry>
+            <AppBar position="static">
+              <Container sx={containerStyle}>
+                <Title />
+                <HeaderNavbar />
+              </Container>
+            </AppBar>
+            {children}
+          </ThemeRegistry>
+        </ReactQueryProvider>
       </body>
     </html>
   );

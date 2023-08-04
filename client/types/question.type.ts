@@ -11,5 +11,5 @@ export interface questionI {
   questionText: string;
   createOn: string;
   id: number;
-  answer: answerI[];
+  // answer: answerI[];
 }

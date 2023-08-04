@@ -43,9 +43,7 @@ const HeaderNavbar: FC = () => {
         open={newQuestionModal}
         title={SHARED_STRINGS.CREATE_NEW_QUESTION}
       >
-        <>
-          <FormNewQuestion onCancel={handleCloseModalNewQuestion} />
-        </>
+        <FormNewQuestion onClose={handleCloseModalNewQuestion} />
       </CustomModal>
     </Box>
   );

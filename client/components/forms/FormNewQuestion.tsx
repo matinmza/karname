@@ -8,12 +8,29 @@ import * as yup from "yup";
 import FormikInput from "../formik-fields/FormikInput";
 import { Box, Button, Stack } from "@mui/material";
 import SHARED_STRINGS from "@/constant/strings/shared-strings.constant";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { createQuestion } from "@/apis/questions";
 const validationSchema = yup.object().shape({
   [FormFieldsE.questionText]: yup.string().required(),
   [FormFieldsE.subject]: yup.string().required(),
 });
-const FormNewQuestion: FC<{ onCancel: () => any }> = (props) => {
-  const handleSubmit = () => {};
+const FormNewQuestion: FC<{ onClose: () => any }> = (props) => {
+  const queryClient = useQueryClient();
+  const createQuestionMutation = useMutation({
+    mutationFn: createQuestion,
+    onSuccess: (data) => {
+      queryClient.setQueryData(["questions", data.id], data);
+      queryClient.invalidateQueries(["questions"], { exact: true });
+      props.onClose();
+    },
+  });
+
+  const handleSubmit = (values: any) => {
+    createQuestionMutation.mutate({
+      questionText: values[FormFieldsE.questionText],
+      subject: values[FormFieldsE.subject],
+    });
+  };
 
   return (
     <Box>
@@ -41,11 +58,16 @@ const FormNewQuestion: FC<{ onCancel: () => any }> = (props) => {
               <Button
                 variant="text"
                 sx={{ px: "25px" }}
-                onClick={props.onCancel}
+                onClick={props.onClose}
+                disabled={createQuestionMutation.isLoading}
               >
                 {SHARED_STRINGS.CANCEL}
               </Button>
-              <Button type="submit" sx={{ px: "14px" }}>
+              <Button
+                disabled={createQuestionMutation.isLoading}
+                type="submit"
+                sx={{ px: "14px" }}
+              >
                 {SHARED_STRINGS.CREATE_QUESTION}
               </Button>
             </Box>
