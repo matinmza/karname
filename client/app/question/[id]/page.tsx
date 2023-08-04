@@ -52,7 +52,7 @@ const QuestionSinglePage: NextPageWithParam<"id"> = (props) => {
       </Alert>
     );
   }
-  console.log(answersQuery, "answersQuery");
+
   return (
     <main>
       <Container sx={{ py: "2rem" }}>
