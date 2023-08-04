@@ -56,7 +56,7 @@ const FormNewQuestion: FC<{ onClose: () => any }> = (props) => {
           >
             <Button
               variant="text"
-              sx={{ px: "25px" }}
+              sx={{ px: "31px" }}
               onClick={props.onClose}
               disabled={createQuestionMutation.isLoading}
             >
@@ -65,7 +65,7 @@ const FormNewQuestion: FC<{ onClose: () => any }> = (props) => {
             <Button
               disabled={createQuestionMutation.isLoading}
               type="submit"
-              sx={{ px: "14px" }}
+              sx={{ px: "20px" }}
             >
               {SHARED_STRINGS.CREATE_QUESTION}
             </Button>

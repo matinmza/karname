@@ -49,7 +49,7 @@ const CustomModal: FC<PropsWithChildren<PropI>> = (props) => {
       slotProps={{
         backdrop: {
           timeout: 500,
-          sx: { backgroundColor: "#00000038" },
+          sx: { backgroundColor: "rgba(0, 0, 0, 0.38)" },
         },
       }}
     >

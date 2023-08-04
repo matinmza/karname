@@ -74,7 +74,7 @@
       "createOn": "2023-08-04T08:42:34.929Z",
       "avatar": "/img/avatar2.svg",
       "fullName": "الناز شاکر دوست",
-      "text": "matin teset",
+      "text": "matin test",
       "isBad": 73,
       "isGood": 20,
       "questionId": 2,
@@ -139,6 +139,26 @@
       "isGood": 48,
       "questionId": 3,
       "id": 11
+    },
+    {
+      "createOn": "2023-08-04T12:58:39.688Z",
+      "avatar": "/img/avatar.svg",
+      "fullName": "الناز شاکر دوست",
+      "text": "1234",
+      "isBad": 63,
+      "isGood": 6,
+      "questionId": 0,
+      "id": 12
+    },
+    {
+      "createOn": "2023-08-04T12:59:10.161Z",
+      "avatar": "/img/avatar2.svg",
+      "fullName": "الناز شاکر دوست",
+      "text": "324",
+      "isBad": 5,
+      "isGood": 61,
+      "questionId": 0,
+      "id": 13
     }
   ]
 }

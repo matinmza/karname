@@ -22,8 +22,8 @@ const Home: NextPage = () => {
 
   return (
     <main>
-      <Container sx={{ py: "32px" }}>
-        <Stack gap="20px">
+      <Container sx={{ py: "2rem" }}>
+        <Stack gap="1.25rem">
           {questionsQuery.data?.map((item) => (
             <CardQuestion key={item.id} {...item} />
           ))}

@@ -58,11 +58,7 @@ const QuestionSinglePage: NextPageWithParam<"id"> = (props) => {
   return (
     <Container sx={{ py: "32px" }}>
       {questionQuery.data && (
-        <CardQuestion
-          {...questionQuery.data}
-          showDetailButton={false}
-          showAvatar
-        />
+        <CardQuestion {...questionQuery.data} showDetailButton={false} />
       )}
       {answersQuery.data && answersQuery.data.length > 0 ? (
         <Typography component="h2" variant="h1" mt="24px" mb="16px">

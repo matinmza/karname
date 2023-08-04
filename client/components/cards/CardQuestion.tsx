@@ -26,7 +26,7 @@ const headerStyle = {
 const CardQuestion: FC<
   questionI & { showDetailButton?: boolean; showAvatar?: boolean }
 > = (prop) => {
-  const { showDetailButton = true, showAvatar = false, ...props } = prop;
+  const { showDetailButton = true, showAvatar = true, ...props } = prop;
   return (
     <Box sx={RootStyle}>
       <Box sx={headerStyle}>

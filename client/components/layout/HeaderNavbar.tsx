@@ -14,7 +14,11 @@ const ProfileMenu: FC = () => {
         <Avatar sx={{ width: "42px", height: "42px" }} src="/img/avatar.svg" />
         <Typography
           variant="h4"
-          sx={{ paddingRight: "16px", paddingLeft: "12px" }}
+          sx={{
+            paddingRight: "16px",
+            paddingLeft: "12px",
+            color: "gray.darker",
+          }}
         >
           {SHARED_STRINGS.STATIC_PROFILE_NAME}
         </Typography>
@@ -33,7 +37,10 @@ const HeaderNavbar: FC = () => {
   };
   return (
     <Box display="flex" alignItems="center" gap="2rem">
-      <Button sx={{ px: "14px" }} onClick={handleOpenModalNewQuestion}>
+      <Button
+        sx={{ px: "21px", gap: "8px" }}
+        onClick={handleOpenModalNewQuestion}
+      >
         <IconPlus />
         {SHARED_STRINGS.NEW_QUESTION}
       </Button>

@@ -13,7 +13,7 @@ export const getAnswer = (questionId: number) => {
 export const createAnswer = (text: string, questionId: number) => {
   const createOn = new Date().toISOString();
   const fullName = SHARED_STRINGS.STATIC_PROFILE_NAME;
-  const avatar = "/img/avatar.svg";
+  const avatar = "/img/avatar2.svg";
   const isGood = Math.floor(Math.random() * 100);
   const isBad = Math.floor(Math.random() * 100);
 
