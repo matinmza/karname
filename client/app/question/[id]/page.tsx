@@ -1,9 +1,10 @@
 "use client";
-import { getAnswer } from "@/apis/awnsers";
+import { getAnswer } from "@/apis/answers";
 import { getQuestion } from "@/apis/questions";
 import CardAnswer from "@/components/cards/CardAnswer";
 import CardQuestion from "@/components/cards/CardQuestion";
-import FormAnswerQuestion from "@/components/forms/FormAwnserQuestion";
+import FormAnswerQuestion from "@/components/forms/FormAnswerQuestion";
+
 import SHARED_STRINGS from "@/constant/strings/shared-strings.constant";
 import { answerI, questionI } from "@/types/question.type";
 import { NextPageWithParam } from "@/types/shared.type";

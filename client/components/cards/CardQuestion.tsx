@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import React, { FC } from "react";
-import ShowTime from "../shared/ShowTime";
-import IconComment from "../icons/IconComment";
+import ShowTime from "components/shared/ShowTime";
+import IconComment from "components/icons/IconComment";
 import SHARED_STRINGS from "@/constant/strings/shared-strings.constant";
 import Link from "next/link";
 import { questionI } from "@/types/question.type";

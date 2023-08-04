@@ -10,7 +10,7 @@ import FormikInput from "../formik-fields/FormikInput";
 import { Box, Button, Stack } from "@mui/material";
 import SHARED_STRINGS from "@/constant/strings/shared-strings.constant";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { createAnswer } from "@/apis/awnsers";
+import { createAnswer } from "@/apis/answers";
 const validationSchema = yup.object().shape({
   [FormFieldsE.answerText]: yup.string().required(),
 });

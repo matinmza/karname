@@ -10,8 +10,8 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
-import IconClose from "../icons/IconClose";
-import SHARED_STRINGS from "@/constant/strings/shared-strings.constant";
+import IconClose from "components/icons/IconClose";
+import SHARED_STRINGS from "constant/strings/shared-strings.constant";
 
 interface PropI {
   onClose: () => any;

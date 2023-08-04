@@ -1,12 +1,12 @@
 import { Box, Button, Typography } from "@mui/material";
 import React, { FC } from "react";
-import ShowTime from "../shared/ShowTime";
+import ShowTime from "components/shared/ShowTime";
 
 import SHARED_STRINGS from "@/constant/strings/shared-strings.constant";
 import Link from "next/link";
 import { answerI } from "@/types/question.type";
-import IconHappy from "../icons/IconHappy";
-import IconSad from "../icons/IconSad";
+import IconHappy from "components/icons/IconHappy";
+import IconSad from "components/icons/IconSad";
 const StatusAnswer: FC<{ sadLength: number; happyLength: number }> = ({
   happyLength,
   sadLength,

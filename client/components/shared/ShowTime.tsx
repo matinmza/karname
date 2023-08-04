@@ -1,8 +1,8 @@
 import { Box, Typography } from "@mui/material";
 import React, { FC, useMemo } from "react";
 import { format } from "date-fns-jalali";
-import SHARED_STRINGS from "@/constant/strings/shared-strings.constant";
-import IconLine from "../icons/IconLine";
+import SHARED_STRINGS from "constant/strings/shared-strings.constant";
+import IconLine from "components/icons/IconLine";
 
 const ShowTime: FC<{ time: string }> = ({ time }) => {
   const values = useMemo<{ hour: string; date: string }>(() => {
