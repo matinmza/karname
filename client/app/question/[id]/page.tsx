@@ -57,7 +57,7 @@ const QuestionSinglePage: NextPageWithParam<"id"> = (props) => {
   }
   return (
     <main>
-      <Container sx={{ py: "1rem" }}>
+      <Container sx={{ py: "2rem" }}>
         {questionQuery.data && (
           <CardQuestion {...questionQuery.data} showDetailButton={false} />
         )}
