@@ -25,7 +25,7 @@ const QuestionSinglePage: NextPageWithParam<"id"> = (props) => {
     queryFn: () => getQuestion(props.params.id),
   });
   const answersQuery = useQuery<answerI[]>({
-    queryKey: ["answers", questionQuery?.data?.id],
+    queryKey: ["answers", "" + questionQuery?.data?.id],
     enabled: questionQuery?.data?.id != null,
     queryFn: (val) => {
       return getAnswer(questionQuery?.data?.id as number);
@@ -52,6 +52,7 @@ const QuestionSinglePage: NextPageWithParam<"id"> = (props) => {
       </Alert>
     );
   }
+  console.log(answersQuery, "answersQuery");
   return (
     <main>
       <Container sx={{ py: "2rem" }}>
@@ -65,9 +66,14 @@ const QuestionSinglePage: NextPageWithParam<"id"> = (props) => {
         ) : null}
 
         <Stack gap="1.25rem">
-          {answersQuery.data?.map((item) => (
-            <CardAnswer key={item.id} {...item} />
-          ))}
+          {answersQuery &&
+            answersQuery.data?.map((item) => (
+              <CardAnswer
+                questionId={questionQuery?.data?.id}
+                key={item.id}
+                {...item}
+              />
+            ))}
         </Stack>
         <Typography component="h2" variant="h1" mt="1.5rem" mb="1.125rem">
           {SHARED_STRINGS.SUBMIT_YOUR_ANSWER}
