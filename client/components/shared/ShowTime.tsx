@@ -20,14 +20,14 @@ const ShowTime: FC<{ time: string }> = ({ time }) => {
         {SHARED_STRINGS.HOUR}:
       </Typography>
 
-      <Typography variant="h5">{values.hour}</Typography>
+      <Typography variant="h4">{values.hour}</Typography>
       <Box mx="12px" sx={{ display: "flex", alignItems: "center" }}>
         <IconLine />
       </Box>
       <Typography variant="body2" color="gray.dark">
         {SHARED_STRINGS.DATE}:
       </Typography>
-      <Typography variant="h5">{values.date}</Typography>
+      <Typography variant="h4">{values.date}</Typography>
     </Box>
   );
 };

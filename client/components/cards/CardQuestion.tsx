@@ -32,12 +32,12 @@ const CardQuestion: FC<
           justifyContent: "space-between",
         }}
       >
-        <Typography variant="h4">{props.subject}</Typography>
+        <Typography variant="h3">{props.subject}</Typography>
         <Box display="flex" alignItems="center" gap="28px">
           <ShowTime time={props.createOn} />
           <Box display="flex" alignItems="center" gap={1}>
             <IconComment />
-            <Typography color="gray.dark" variant="h5">
+            <Typography color="gray.dark" variant="h4">
               20
             </Typography>
           </Box>

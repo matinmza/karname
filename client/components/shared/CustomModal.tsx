@@ -65,7 +65,7 @@ const CustomModal: FC<PropsWithChildren<PropI>> = (props) => {
                   "0px 0px 1px 0px rgba(12, 26, 75, 0.24), 0px 3px 8px -1px rgba(50, 50, 71, 0.05)",
               }}
             >
-              <Typography variant="h3">{props.title}</Typography>
+              <Typography variant="h2">{props.title}</Typography>
               <Tooltip title={SHARED_STRINGS.CLOSE}>
                 <IconButton onClick={props.onClose}>
                   <IconClose />

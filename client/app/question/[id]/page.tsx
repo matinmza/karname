@@ -46,7 +46,7 @@ const QuestionSinglePage: NextPageWithParam<"id"> = (props) => {
         <CardQuestion {...questionQuery.data} showDetailButton={false} />
       )}
       {answersQuery.data && answersQuery.data.length > 0 ? (
-        <Typography variant="h2" mt="24px" mb="16px">
+        <Typography component="h2" variant="h1" mt="24px" mb="16px">
           {SHARED_STRINGS.ANSWERS}
         </Typography>
       ) : null}
@@ -56,7 +56,7 @@ const QuestionSinglePage: NextPageWithParam<"id"> = (props) => {
           <CardAnswer key={item.id} {...item} />
         ))}
       </Stack>
-      <Typography variant="h2" mt="24px" mb="18px">
+      <Typography component="h2" variant="h1" mt="24px" mb="18px">
         {SHARED_STRINGS.SUBMIT_YOUR_ANSWER}
       </Typography>
       {typeof questionQuery?.data?.id !== "undefined" ? (

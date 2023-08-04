@@ -13,7 +13,7 @@ const ProfileMenu: FC = () => {
       <Button variant="text">
         <Avatar sx={{ width: "42px", height: "42px" }} src="/img/avatar.svg" />
         <Typography
-          variant="h5"
+          variant="h4"
           sx={{ paddingRight: "16px", paddingLeft: "12px" }}
         >
           {SHARED_STRINGS.STATIC_PROFILE_NAME}

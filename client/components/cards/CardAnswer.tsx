@@ -15,13 +15,13 @@ const StatusAnswer: FC<{ sadLength: number; happyLength: number }> = ({
     <Box display="flex" alignItems="center" gap={1}>
       <Box display="flex" alignItems="center" gap={1}>
         <IconHappy sx={{ fill: "#9CAEBB" }} />
-        <Typography color="gray.dark" variant="h5">
+        <Typography color="gray.dark" variant="h4">
           {happyLength}
         </Typography>
       </Box>
       <Box display="flex" alignItems="center" gap={1}>
         <IconSad sx={{ fill: "#9CAEBB" }} />
-        <Typography color="gray.dark" variant="h5">
+        <Typography color="gray.dark" variant="h4">
           {sadLength}
         </Typography>
       </Box>
@@ -53,7 +53,7 @@ const CardAnswer: FC<answerI> = (props) => {
           justifyContent: "space-between",
         }}
       >
-        <Typography variant="h4">{props.fullName}</Typography>
+        <Typography variant="h3">{props.fullName}</Typography>
         <Box display="flex" alignItems="center" gap="28px">
           <ShowTime time={props.createOn} />
 
