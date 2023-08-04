@@ -13,4 +13,5 @@ export interface questionI {
   createOn: string;
   id: number;
   avatar: string;
+  answerLength: number;
 }
