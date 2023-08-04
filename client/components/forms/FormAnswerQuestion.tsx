@@ -41,7 +41,7 @@ const FormAnswerQuestion: FC<{ questionId: number }> = ({ questionId }) => {
       {(formik) => (
         <Stack gap="1.5rem" component="form" onSubmit={formik.handleSubmit}>
           <FormikInput name={FormFieldsE.answerText} multiline rows={6} />
-          <Box mt="0.625rem">
+          <Box>
             <Button
               disabled={createAnswerMutation.isLoading}
               type="submit"

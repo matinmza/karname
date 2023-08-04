@@ -77,7 +77,7 @@ const CardAnswer: FC<answerI> = (props) => {
       </Box>
       <Box padding="1rem">
         <Typography variant="body1">{props.text}</Typography>
-        <Box display="flex" justifyContent="flex-end" gap={1}>
+        <Box display="flex" justifyContent="flex-end" gap={"0.75rem"}>
           <Button
             variant="outlined"
             sx={{
@@ -93,9 +93,7 @@ const CardAnswer: FC<answerI> = (props) => {
             {SHARED_STRINGS.ANSWER_WAS_GOOD}
           </Button>
           <Button variant="outlined" sx={errorButtonStyle}>
-            <IconHappy
-              sx={{ fill: "#F16063", width: "1rem", height: "1rem" }}
-            />
+            <IconSad sx={{ fill: "#F16063", width: "1rem", height: "1rem" }} />
 
             {SHARED_STRINGS.ANSWER_WAS_NOT_GOOD}
           </Button>
