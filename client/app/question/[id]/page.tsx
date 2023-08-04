@@ -56,28 +56,30 @@ const QuestionSinglePage: NextPageWithParam<"id"> = (props) => {
     );
   }
   return (
-    <Container sx={{ py: "1rem" }}>
-      {questionQuery.data && (
-        <CardQuestion {...questionQuery.data} showDetailButton={false} />
-      )}
-      {answersQuery.data && answersQuery.data.length > 0 ? (
-        <Typography component="h2" variant="h1" mt="1.5rem" mb="1rem">
-          {SHARED_STRINGS.ANSWERS}
-        </Typography>
-      ) : null}
+    <main>
+      <Container sx={{ py: "1rem" }}>
+        {questionQuery.data && (
+          <CardQuestion {...questionQuery.data} showDetailButton={false} />
+        )}
+        {answersQuery.data && answersQuery.data.length > 0 ? (
+          <Typography component="h2" variant="h1" mt="1.5rem" mb="1rem">
+            {SHARED_STRINGS.ANSWERS}
+          </Typography>
+        ) : null}
 
-      <Stack gap="1.25rem">
-        {answersQuery.data?.map((item) => (
-          <CardAnswer key={item.id} {...item} />
-        ))}
-      </Stack>
-      <Typography component="h2" variant="h1" mt="1.5rem" mb="1.125rem">
-        {SHARED_STRINGS.SUBMIT_YOUR_ANSWER}
-      </Typography>
-      {typeof questionQuery?.data?.id !== "undefined" ? (
-        <FormAnswerQuestion questionId={questionQuery.data.id} />
-      ) : null}
-    </Container>
+        <Stack gap="1.25rem">
+          {answersQuery.data?.map((item) => (
+            <CardAnswer key={item.id} {...item} />
+          ))}
+        </Stack>
+        <Typography component="h2" variant="h1" mt="1.5rem" mb="1.125rem">
+          {SHARED_STRINGS.SUBMIT_YOUR_ANSWER}
+        </Typography>
+        {typeof questionQuery?.data?.id !== "undefined" ? (
+          <FormAnswerQuestion questionId={questionQuery.data.id} />
+        ) : null}
+      </Container>
+    </main>
   );
 };
 
