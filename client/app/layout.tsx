@@ -7,7 +7,7 @@ import HeaderNavbar from "@/components/layout/HeaderNavbar";
 import { StyleT } from "types/shared.type";
 import { FC, PropsWithChildren } from "react";
 import "validation/yupConfig";
-import Title from "@/components/shared/Title";
+import HeaderTitle from "@/components/shared/HeaderTitle";
 import ReactQueryProvider from "./ReactQueryProvider";
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
           <ThemeRegistry>
             <AppBar position="static">
               <Container sx={containerStyle}>
-                <Title />
+                <HeaderTitle />
                 <HeaderNavbar />
               </Container>
             </AppBar>

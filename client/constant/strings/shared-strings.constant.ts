@@ -15,6 +15,8 @@ const SHARED_STRINGS: Record<string, string> = {
   ANSWER_WAS_NOT_GOOD: "پاسخ خوب نبود",
   ANSWER_WAS_GOOD: "پاسخ خوب بود",
   SEND_RESPONSE: "ارسال پاسخ",
+  ERROR_TO_GET_QUESTIONS: "مشکل در دریافت سوالات",
+  ERROR_TO_GET_ANSWER: "مشکل در دریافت پاسخ ها",
 };
 
 export default SHARED_STRINGS;

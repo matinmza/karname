@@ -30,31 +30,29 @@ const FormAnswerQuestion: FC<{ questionId: number }> = ({ questionId }) => {
   };
 
   return (
-    <Box>
-      <Formik
-        initialValues={{
-          [FormFieldsE.answerText]: "",
-        }}
-        validateOnBlur
-        validationSchema={validationSchema}
-        onSubmit={handleSubmit}
-      >
-        {(formik) => (
-          <Stack gap="24px" component="form" onSubmit={formik.handleSubmit}>
-            <FormikInput name={FormFieldsE.answerText} multiline rows={6} />
-            <Box mt="10px">
-              <Button
-                disabled={createAnswerMutation.isLoading}
-                type="submit"
-                sx={{ width: 200 }}
-              >
-                {SHARED_STRINGS.SEND_RESPONSE}
-              </Button>
-            </Box>
-          </Stack>
-        )}
-      </Formik>
-    </Box>
+    <Formik
+      initialValues={{
+        [FormFieldsE.answerText]: "",
+      }}
+      validateOnBlur
+      validationSchema={validationSchema}
+      onSubmit={handleSubmit}
+    >
+      {(formik) => (
+        <Stack gap="24px" component="form" onSubmit={formik.handleSubmit}>
+          <FormikInput name={FormFieldsE.answerText} multiline rows={6} />
+          <Box mt="10px">
+            <Button
+              disabled={createAnswerMutation.isLoading}
+              type="submit"
+              sx={{ width: 200 }}
+            >
+              {SHARED_STRINGS.SEND_RESPONSE}
+            </Button>
+          </Box>
+        </Stack>
+      )}
+    </Formik>
   );
 };
 

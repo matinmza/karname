@@ -1,7 +1,7 @@
 import { ChangeEvent, FC, useMemo } from "react";
 import useCustomFormik from "hooks/useCustomFormik";
 import { FormikFieldI } from "types/form.type";
-import { Box, FormControl, Input, InputLabel, InputProps } from "@mui/material";
+import { Box, Input, InputLabel, InputProps } from "@mui/material";
 import PERSIAN_TO_ENGLISH_NUMBER_MAP from "constant/maps/persian-to-english-number.map";
 import transformWithMap from "utils/transformWithMap";
 import FormHelperText from "@mui/material/FormHelperText";
@@ -53,11 +53,7 @@ const FormikInput: FC<InputProps & FormikFieldI> = ({
         sx={{ width: 1, ...props.sx }}
         {...props}
       />
-      <FormHelperText
-        error={Boolean(error)}
-        color="annotations.error"
-        // sx={{ color: "annotations.error" }}
-      >
+      <FormHelperText error={Boolean(error)} color="annotations.error">
         {error}
       </FormHelperText>
     </Box>

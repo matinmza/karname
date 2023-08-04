@@ -5,11 +5,13 @@ export interface answerI {
   text: string;
   id: number;
   fullName: string;
+  avatar: string;
 }
 export interface questionI {
   subject: string;
   questionText: string;
   createOn: string;
   id: number;
+  avatar: string;
   // answer: answerI[];
 }

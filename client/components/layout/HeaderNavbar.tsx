@@ -32,7 +32,7 @@ const HeaderNavbar: FC = () => {
     setNewQuestionModal(false);
   };
   return (
-    <Box sx={{ display: "flex", alignItems: "center", gap: "2rem" }}>
+    <Box display="flex" alignItems="center" gap="2rem">
       <Button sx={{ px: "14px" }} onClick={handleOpenModalNewQuestion}>
         <IconPlus />
         {SHARED_STRINGS.NEW_QUESTION}

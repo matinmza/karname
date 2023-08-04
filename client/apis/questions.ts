@@ -7,8 +7,10 @@ export const createQuestion = (dto: {
   subject: string;
 }) => {
   const createOn = new Date().toISOString();
+  const avatar = "/img/avatar2.svg";
+
   return axios
-    .post(BASE_URL + "/questions", { createOn, ...dto })
+    .post(BASE_URL + "/questions", { createOn, avatar, ...dto })
     .then((res) => res.data);
 };
 

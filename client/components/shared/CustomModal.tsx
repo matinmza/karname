@@ -1,17 +1,10 @@
 import { FC, PropsWithChildren } from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-import {
-  Backdrop,
-  Fade,
-  IconButton,
-  SxProps,
-  Theme,
-  Tooltip,
-  Typography,
-} from "@mui/material";
+import { Backdrop, Fade, IconButton, Tooltip, Typography } from "@mui/material";
 import IconClose from "components/icons/IconClose";
 import SHARED_STRINGS from "constant/strings/shared-strings.constant";
+import { StyleT } from "@/types/shared.type";
 
 interface PropI {
   onClose: () => any;
@@ -19,7 +12,7 @@ interface PropI {
   title?: string;
 }
 
-const style: SxProps<Theme> = {
+const rootStyle: StyleT = {
   position: "absolute" as "absolute",
   top: "50%",
   left: "50%",
@@ -31,6 +24,19 @@ const style: SxProps<Theme> = {
   boxShadow:
     "0px 0px 1px 0px rgba(12, 26, 75, 0.24), 0px 3px 8px -1px rgba(50, 50, 71, 0.05)",
   backgroundColor: "gray.lightest",
+};
+const headerModalStyle: StyleT = {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  paddingLeft: "24px",
+  paddingRight: "16px",
+  paddingY: "12px",
+  borderTopLeftRadius: "8px",
+  borderTopRightRadius: "8px",
+  bgcolor: "naturals.white",
+  boxShadow:
+    "0px 0px 1px 0px rgba(12, 26, 75, 0.24), 0px 3px 8px -1px rgba(50, 50, 71, 0.05)",
 };
 
 const CustomModal: FC<PropsWithChildren<PropI>> = (props) => {
@@ -48,23 +54,9 @@ const CustomModal: FC<PropsWithChildren<PropI>> = (props) => {
       }}
     >
       <Fade in={props.open}>
-        <Box sx={style}>
+        <Box sx={rootStyle}>
           {props.title && (
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                paddingLeft: "24px",
-                paddingRight: "16px",
-                paddingY: "12px",
-                borderTopLeftRadius: "8px",
-                borderTopRightRadius: "8px",
-                bgcolor: "naturals.white",
-                boxShadow:
-                  "0px 0px 1px 0px rgba(12, 26, 75, 0.24), 0px 3px 8px -1px rgba(50, 50, 71, 0.05)",
-              }}
-            >
+            <Box sx={headerModalStyle}>
               <Typography variant="h2">{props.title}</Typography>
               <Tooltip title={SHARED_STRINGS.CLOSE}>
                 <IconButton onClick={props.onClose}>

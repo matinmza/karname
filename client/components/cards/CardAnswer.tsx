@@ -1,12 +1,42 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Avatar, Box, Button, Typography } from "@mui/material";
 import React, { FC } from "react";
 import ShowTime from "components/shared/ShowTime";
 
 import SHARED_STRINGS from "@/constant/strings/shared-strings.constant";
-import Link from "next/link";
+
 import { answerI } from "@/types/question.type";
 import IconHappy from "components/icons/IconHappy";
 import IconSad from "components/icons/IconSad";
+import { Stack } from "@mui/system";
+
+const RootStyle = {
+  boxShadow:
+    " 0px 0px 1px 0px rgba(12, 26, 75, 0.24), 0px 3px 8px -1px rgba(50, 50, 71, 0.05)",
+  borderRadius: "8px",
+  backgroundColor: "gray.lightest",
+  width: "100%",
+};
+const headerStyle = {
+  backgroundColor: "#fff",
+  borderRadius: "8px",
+  boxShadow:
+    " 0px 0px 1px 0px rgba(12, 26, 75, 0.24), 0px 3px 8px -1px rgba(50, 50, 71, 0.05)",
+  paddingX: "16px",
+  paddingY: "8px",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+};
+
+const errorButtonStyle = {
+  color: "annotations.error",
+  gap: "8px",
+  "&:hover": {
+    color: "red",
+    borderColor: "red",
+  },
+};
+
 const StatusAnswer: FC<{ sadLength: number; happyLength: number }> = ({
   happyLength,
   sadLength,
@@ -31,32 +61,14 @@ const StatusAnswer: FC<{ sadLength: number; happyLength: number }> = ({
 
 const CardAnswer: FC<answerI> = (props) => {
   return (
-    <Box
-      sx={{
-        boxShadow:
-          " 0px 0px 1px 0px rgba(12, 26, 75, 0.24), 0px 3px 8px -1px rgba(50, 50, 71, 0.05)",
-        borderRadius: "8px",
-        backgroundColor: "gray.lightest",
-        width: "100%",
-      }}
-    >
-      <Box
-        sx={{
-          backgroundColor: "#fff",
-          borderRadius: "8px",
-          boxShadow:
-            " 0px 0px 1px 0px rgba(12, 26, 75, 0.24), 0px 3px 8px -1px rgba(50, 50, 71, 0.05)",
-          paddingX: "16px",
-          paddingY: "8px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-        <Typography variant="h3">{props.fullName}</Typography>
+    <Box sx={RootStyle}>
+      <Box sx={headerStyle}>
+        <Stack flexDirection="row" alignItems="center" gap={1}>
+          <Avatar variant="rounded" src={props.avatar} />
+          <Typography variant="h3">{props.fullName}</Typography>
+        </Stack>
         <Box display="flex" alignItems="center" gap="28px">
           <ShowTime time={props.createOn} />
-
           <StatusAnswer sadLength={props.isBad} happyLength={props.isGood} />
         </Box>
       </Box>
@@ -74,13 +86,7 @@ const CardAnswer: FC<answerI> = (props) => {
 
             {SHARED_STRINGS.ANSWER_WAS_GOOD}
           </Button>
-          <Button
-            variant="outlined"
-            sx={{
-              color: "annotations.error",
-              gap: "8px",
-            }}
-          >
+          <Button variant="outlined" sx={errorButtonStyle}>
             <IconHappy sx={{ fill: "#F16063" }} />
 
             {SHARED_STRINGS.ANSWER_WAS_NOT_GOOD}
