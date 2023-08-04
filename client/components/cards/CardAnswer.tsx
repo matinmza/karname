@@ -8,6 +8,8 @@ import { answerI } from "@/types/question.type";
 import IconHappy from "components/icons/IconHappy";
 import IconSad from "components/icons/IconSad";
 import { Stack } from "@mui/system";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { addStatusAnswer } from "@/apis/answers";
 
 const RootStyle = {
   boxShadow:
@@ -60,7 +62,17 @@ const StatusAnswer: FC<{ sadLength: number; happyLength: number }> = ({
   );
 };
 
-const CardAnswer: FC<answerI> = (props) => {
+const CardAnswer: FC<answerI & { questionId: number }> = (props) => {
+  const queryClient = useQueryClient();
+
+  const changeStatusAnswerMutation = useMutation({
+    mutationFn: (status: "isGood" | "isBad") => addStatusAnswer(props, status),
+    onSuccess: () => {
+      queryClient.invalidateQueries(["answers", "" + props.questionId], {
+        exact: true,
+      });
+    },
+  });
   return (
     <Box sx={RootStyle}>
       <Box sx={headerStyle}>
@@ -85,6 +97,9 @@ const CardAnswer: FC<answerI> = (props) => {
               gap: "0.5rem",
               paddingX: "11.5px",
             }}
+            onClick={() => {
+              changeStatusAnswerMutation.mutate("isGood");
+            }}
           >
             <IconHappy
               sx={{ fill: "#66CB9F", width: "1rem", height: "1rem" }}
@@ -92,7 +107,13 @@ const CardAnswer: FC<answerI> = (props) => {
 
             {SHARED_STRINGS.ANSWER_WAS_GOOD}
           </Button>
-          <Button variant="outlined" sx={errorButtonStyle}>
+          <Button
+            onClick={() => {
+              changeStatusAnswerMutation.mutate("isBad");
+            }}
+            variant="outlined"
+            sx={errorButtonStyle}
+          >
             <IconSad sx={{ fill: "#F16063", width: "1rem", height: "1rem" }} />
 
             {SHARED_STRINGS.ANSWER_WAS_NOT_GOOD}

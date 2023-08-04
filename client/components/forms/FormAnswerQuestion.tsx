@@ -33,7 +33,9 @@ const FormAnswerQuestion: FC<{ question: questionI }> = ({ question }) => {
     mutationFn: (val: string) => createAnswer(val, questionId),
     onSuccess: (data) => {
       queryClient.setQueryData(["answers", data.id], data);
-      queryClient.invalidateQueries(["answers", questionId], { exact: true });
+      queryClient.invalidateQueries(["answers", "" + questionId], {
+        exact: true,
+      });
       changeQuestionMutation.mutate();
     },
   });
