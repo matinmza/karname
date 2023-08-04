@@ -9,22 +9,24 @@ import * as yup from "yup";
 import FormikInput from "../formik-fields/FormikInput";
 import { Box, Button, Stack } from "@mui/material";
 import SHARED_STRINGS from "@/constant/strings/shared-strings.constant";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { createAnswer } from "@/apis/answers";
 import { questionI } from "@/types/question.type";
-import { addAnswerLength } from "@/apis/questions";
+import { addAnswerLength, getQuestion } from "@/apis/questions";
 const validationSchema = yup.object().shape({
   [FormFieldsE.answerText]: yup.string().required(),
 });
 const FormAnswerQuestion: FC<{ question: questionI }> = ({ question }) => {
   const questionId = question.id;
+
   const queryClient = useQueryClient();
+
   const changeQuestionMutation = useMutation({
     mutationFn: () => addAnswerLength(question),
     onSuccess: (data) => {
-      queryClient.setQueryData(["questions", data.id], data);
+      queryClient.setQueryData(["questions", "" + data.id], data);
       queryClient.invalidateQueries(["questions"], { exact: true });
-      queryClient.invalidateQueries(["questions", data.id], { exact: true });
+      queryClient.invalidateQueries(["questions", "" + data.id]);
     },
   });
   const createAnswerMutation = useMutation({

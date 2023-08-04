@@ -15,7 +15,7 @@ export const createQuestion = (dto: {
     .then((res) => res.data);
 };
 
-export function getQuestion(id: string) {
+export function getQuestion(id: string | number) {
   return axios.get(BASE_URL + "/questions/" + id).then((res) => res.data);
 }
 
