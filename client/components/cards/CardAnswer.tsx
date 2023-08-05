@@ -32,6 +32,7 @@ const headerStyle = {
 
 const errorButtonStyle = {
   color: "annotations.error",
+  borderColor: "annotations.error",
   gap: "0.5rem",
   paddingX: "9px",
   "&:hover": {
