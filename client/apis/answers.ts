@@ -1,10 +1,10 @@
 import SHARED_STRINGS from "@/constant/strings/shared-strings.constant";
 import { answerI } from "@/types/question.type";
-import axios from "axios";
-const BASE_URL = "http://localhost:8800";
+import server from "apis/server"
+
 export const getAnswer = (questionId: number) => {
-  return axios
-    .get(BASE_URL + "/answers", {
+  return server
+    .get("/answers", {
       params: {
         questionId,
       },
@@ -18,8 +18,8 @@ export const createAnswer = (text: string, questionId: number) => {
   const isGood = 0;
   const isBad = 0;
 
-  return axios
-    .post(BASE_URL + "/answers", {
+  return server
+    .post("/answers", {
       createOn,
       avatar,
       fullName,
@@ -32,8 +32,8 @@ export const createAnswer = (text: string, questionId: number) => {
 };
 
 export function addStatusAnswer(answer: answerI, status: "isGood" | "isBad") {
-  return axios
-    .put(BASE_URL + "/answers/" + answer.id, {
+  return server
+    .put( "/answers/" + answer.id, {
       ...answer,
       [status]: answer[status] + 1,
     })

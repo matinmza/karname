@@ -1,8 +1,7 @@
 import { questionI } from "@/types/question.type";
-import axios from "axios";
-const BASE_URL = "http://localhost:8800";
+import server from 'apis/server'
 export const getQuestions = () =>
-  axios.get(BASE_URL + "/questions").then((res) => res.data);
+server.get("/questions").then((res) => res.data);
 export const createQuestion = (dto: {
   questionText: string;
   subject: string;
@@ -10,18 +9,18 @@ export const createQuestion = (dto: {
   const createOn = new Date().toISOString();
   const avatar = "/img/avatar2.svg";
   const answerLength = 0;
-  return axios
-    .post(BASE_URL + "/questions", { createOn, avatar, answerLength, ...dto })
+  return server
+    .post("/questions", { createOn, avatar, answerLength, ...dto })
     .then((res) => res.data);
 };
 
 export function getQuestion(id: string | number) {
-  return axios.get(BASE_URL + "/questions/" + id).then((res) => res.data);
+  return server.get("/questions/" + id).then((res) => res.data);
 }
 
 export function addAnswerLength(question: questionI) {
-  return axios
-    .put(BASE_URL + "/questions/" + question.id, {
+  return server
+    .put("/questions/" + question.id, {
       ...question,
       answerLength: question.answerLength + 1,
     })
